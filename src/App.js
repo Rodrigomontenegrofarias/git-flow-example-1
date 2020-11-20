@@ -9,6 +9,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
+          Supongamos que puedes tocar la ropa y cambiar de música
+        </p>
+        <p>
           Program version : {version}
         </p>
         <p>
