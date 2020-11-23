@@ -62,4 +62,4 @@ steps:
       pathtoPublish: "$(Build.ArtifactStagingDirectory)"
       artifactName: drop
       publishLocation: 'container'
-    displayName: "Publish npm artifact"
+    displayName: "Publish npm artifact" 
