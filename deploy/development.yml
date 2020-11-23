@@ -1,16 +1,19 @@
-
 # Rama desarrollo, se gatillará en las siguientes ramas
 trigger:
     branches:
       include:
         - develop
         - release/*
-# Máquina que ejecutará la integración continua
+
+# Máquina que ejecutará la integración continua  
 pool:
   vmImage: "ubuntu-latest"
+# Git version es un componente instalable para azure devops, debe instalarse para que funcione
 
 steps:
- - task: NodeTool@0    
+
+
+  - task: NodeTool@0    
     inputs:
       versionSpec: "12.x"
       
@@ -49,6 +52,8 @@ steps:
       command: 'custom'
       customCommand: 'run build'
     displayName: "build"
+
+ 
   
   - task: CopyFiles@2
     inputs:
@@ -62,4 +67,4 @@ steps:
       pathtoPublish: "$(Build.ArtifactStagingDirectory)"
       artifactName: drop
       publishLocation: 'container'
-    displayName: "Publish npm artifact" 
+    displayName: "Publish npm artifact"
